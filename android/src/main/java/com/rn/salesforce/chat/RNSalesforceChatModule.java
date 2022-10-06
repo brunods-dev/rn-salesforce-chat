@@ -139,7 +139,7 @@ public class RNSalesforceChatModule extends ReactContextBaseJavaModule implement
 	}
 
 	@ReactMethod
-	public void configureChat(String orgId, String buttonId, String deploymentId, String liveAgentPod, @Nullable String visitorName) {
+	public void configureChat(String orgId, String buttonId, String deploymentId, String liveAgentPod, @Nullable String visitorName, Boolean defaultToMinimized) {
 		ChatConfiguration.Builder chatConfigurationBuilder = new ChatConfiguration.Builder(orgId, buttonId, deploymentId, liveAgentPod);
 
 		if (visitorName != null) chatConfigurationBuilder.visitorName(visitorName);
@@ -152,7 +152,7 @@ public class RNSalesforceChatModule extends ReactContextBaseJavaModule implement
 		chatUiConfiguration = new ChatUIConfiguration.Builder()
 				.chatConfiguration(chatConfiguration)
 				.queueStyle(QueueStyle.Position)
-				.defaultToMinimized(false)
+				.defaultToMinimized(defaultToMinimized)
 				.disablePreChatView(true)
 				.build();
 	}

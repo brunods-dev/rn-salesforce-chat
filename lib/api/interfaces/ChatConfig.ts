@@ -4,4 +4,5 @@ export interface ChatConfig {
   deploymentId: string;
   liveAgentPod: string;
   visitorName?: string;
+  defaultToMinimized?: boolean;
 }

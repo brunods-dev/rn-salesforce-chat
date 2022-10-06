@@ -108,7 +108,7 @@ RCT_EXPORT_METHOD(createEntity:(NSString *)objectType linkToTranscriptField:(NSS
 }
 
 RCT_EXPORT_METHOD(configureChat:(NSString *)orgId buttonId:(NSString *)buttonId deploymentId:(NSString *)deploymentId
-                  liveAgentPod:(NSString *)liveAgentPod visitorName:(NSString *)visitorName)
+                  liveAgentPod:(NSString *)liveAgentPod visitorName:(NSString *)visitorName visitorName2:(BOOL *)visitorName2z)
 {
     chatConfiguration = [[SCSChatConfiguration alloc] initWithLiveAgentPod:liveAgentPod orgId:orgId
                                                               deploymentId:deploymentId buttonId:buttonId];
@@ -125,6 +125,18 @@ RCT_EXPORT_METHOD(openChat:(RCTResponseSenderBlock)failureCallback successCallba
         return;
     }
 
+    // Create appearance configuration instance
+    SCAppearanceConfiguration *appearance = [SCAppearanceConfiguration new];
+
+    // Customize color tokens
+    [appearance setColor:COLOR_VALUE forName:TOKEN_NAME];
+
+    // Add other customizations here...
+
+    // Save configuration instance
+    [SCServiceCloud sharedInstance].appearanceConfiguration = appearance;
+
+    
     [[SCServiceCloud sharedInstance].chatCore removeDelegate:self];
     [[SCServiceCloud sharedInstance].chatCore addDelegate:self];
     [[SCServiceCloud sharedInstance].chatUI showChatWithConfiguration:chatConfiguration];
