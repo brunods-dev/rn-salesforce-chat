@@ -126,15 +126,15 @@ RCT_EXPORT_METHOD(openChat:(RCTResponseSenderBlock)failureCallback successCallba
     }
 
     // Create appearance configuration instance
-    SCAppearanceConfiguration *appearance = [SCAppearanceConfiguration new];
+    // SCAppearanceConfiguration *appearance = [SCAppearanceConfiguration new];
 
-    // Customize color tokens
-    [appearance setColor:COLOR_VALUE forName:TOKEN_NAME];
+    // // Customize color tokens
+    // [appearance setColor:COLOR_VALUE forName:TOKEN_NAME];
 
-    // Add other customizations here...
+    // // Add other customizations here...
 
-    // Save configuration instance
-    [SCServiceCloud sharedInstance].appearanceConfiguration = appearance;
+    // // Save configuration instance
+    // [SCServiceCloud sharedInstance].appearanceConfiguration = appearance;
 
     
     [[SCServiceCloud sharedInstance].chatCore removeDelegate:self];
