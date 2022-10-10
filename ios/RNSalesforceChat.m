@@ -134,46 +134,48 @@ RCT_EXPORT_METHOD(createEntity:(NSString *)objectType linkToTranscriptField:(NSS
     [entities addObject:entity];
 }
 
-RCT_EXPORT_METHOD(configureChat:(NSString *)orgId buttonId:(NSString *)buttonId deploymentId:(NSString *)deploymentId
-                  liveAgentPod:(NSString *)liveAgentPod visitorName:(NSString *)visitorName defaultToMinimized:(BOOL *)defaultToMinimized)
+RCT_EXPORT_METHOD(configureChat:(NSString *)orgId
+                  buttonId:(NSString *)buttonId
+                  deploymentId:(NSString *)deploymentId
+                  liveAgentPod:(NSString *)liveAgentPod
+                  visitorName:(NSString *)visitorName
+                  defaultToMinimized:(BOOL *)defaultToMinimized
+                  navbarBackground:(NSString *)navbarBackground
+                  navbarInverted:(NSString *)navbarInverted
+                  brandPrimary:(NSString *)brandPrimary
+                  brandSecondary:(NSString *)brandSecondary
+                  brandPrimaryInverted:(NSString *)brandPrimaryInverted
+                  brandSecondaryInverted:(NSString *)brandSecondaryInverted
+                  contrastPrimary:(NSString *)contrastPrimary
+                  contrastSecondary:(NSString *)contrastSecondary
+                  contrastTertiary:(NSString *)contrastTertiary
+                  contrastQuaternary:(NSString *)contrastQuaternary
+                  contrastInverted:(NSString *)contrastInverted
+                  feedbackPrimary:(NSString *)feedbackPrimary
+                  feedbackSecondary:(NSString *)feedbackSecondary
+                  feedbackTertiary:(NSString *)feedbackTertiary
+                  overlay:(NSString *)overlay
+                  navbarBackgroundDark:(NSString *)navbarBackgroundDark
+                  navbarInvertedDark:(NSString *)navbarInvertedDark
+                  brandPrimaryDark:(NSString *)brandPrimaryDark
+                  brandSecondaryDark:(NSString *)brandSecondaryDark
+                  brandPrimaryInvertedDark:(NSString *)brandPrimaryInvertedDark
+                  brandSecondaryInvertedDark:(NSString *)brandSecondaryInvertedDark
+                  contrastPrimaryDark:(NSString *)contrastPrimaryDark
+                  contrastSecondaryDark:(NSString *)contrastSecondaryDark
+                  contrastTertiaryDark:(NSString *)contrastTertiaryDark
+                  contrastQuaternaryDark:(NSString *)contrastQuaternaryDark
+                  contrastInvertedDark:(NSString *)contrastInvertedDark
+                  feedbackPrimaryDark:(NSString *)feedbackPrimaryDark
+                  feedbackSecondaryDark:(NSString *)feedbackSecondaryDark
+                  feedbackTertiaryDark:(NSString *)feedbackTertiaryDark
+                  overlayDark:(NSString *)overlayDark)
 {
     chatConfiguration = [[SCSChatConfiguration alloc] initWithLiveAgentPod:liveAgentPod orgId:orgId
                                                               deploymentId:deploymentId buttonId:buttonId];
 
     // Create appearance configuration instance
     SCAppearanceConfiguration *appearance = [SCAppearanceConfiguration new];
-
-    NSString *navbarBackground = @"#FFFFFF";
-    NSString *navbarInverted = @"#070708";
-    NSString *brandPrimary = @"#6B0CC5";
-    NSString *brandSecondary = @"#9E00FF";
-    NSString *brandPrimaryInverted = @"#FFFFFF";
-    NSString *brandSecondaryInverted = @"#FFFFFF";
-    NSString *contrastPrimary = @"#070708";
-    NSString *contrastSecondary = @"#979C9E";
-    NSString *contrastTertiary = @"#CDCFD0";
-    NSString *contrastQuaternary = @"#F2F4F5";
-    NSString *contrastInverted = @"#FFFFFF";
-    NSString *feedbackPrimary = @"#B10017";
-    NSString *feedbackSecondary = @"#5AE69C";
-    NSString *feedbackTertiary = @"#F7DD72";
-    NSString *overlay = @"#000000";
-
-    NSString *navbarBackgroundDark = @"#2B2A2E";
-    NSString *navbarInvertedDark = @"#E3E5E5";
-    NSString *brandPrimaryDark = @"#9E00FF";
-    NSString *brandSecondaryDark = @"#AF5CF6";
-    NSString *brandPrimaryInvertedDark = @"#FFFFFF";
-    NSString *brandSecondaryInvertedDark = @"#FFFFFF";
-    NSString *contrastPrimaryDark = @"#E3E5E5";
-    NSString *contrastSecondaryDark = @"#979C9E";
-    NSString *contrastTertiaryDark = @"#CDCFD0";
-    NSString *contrastQuaternaryDark = @"#070708";
-    NSString *contrastInvertedDark = @"#2B2A2E";
-    NSString *feedbackPrimaryDark = @"#EFB8BD";
-    NSString *feedbackSecondaryDark = @"#9DFFD3";
-    NSString *feedbackTertiaryDark = @"#FFEFB0";
-    NSString *overlayDark = @"##000000";
 
     if( @available(iOS 12.0, *) && UIScreen.mainScreen.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark ){
       //is dark
