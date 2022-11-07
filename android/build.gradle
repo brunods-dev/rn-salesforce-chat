@@ -25,12 +25,12 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 31
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
     }
@@ -44,4 +44,3 @@ dependencies {
     implementation "com.salesforce.service:chat-ui:4.3.2"
     implementation "com.salesforce.service:chat-core:4.3.2"
 }
-  
